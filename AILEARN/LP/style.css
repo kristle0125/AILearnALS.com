@@ -1,0 +1,443 @@
+/* import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  background: #fffdf0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100vw;
+}
+.container{
+  display: flex;
+  background-color: #fffdf0;
+  width: 100vw;
+}
+nav{
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  background: #001840;
+  width: 260px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Customize the appearance of the thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #f5c400;
+  border-radius: 10px;
+}
+.sidebar-content {
+  position: relative;
+  overflow-y: scroll;
+  max-height: calc(100vh - 50px); /* Adjust based on the height of the footer */
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #001840;
+  color: #fff; /* Example text color */
+}
+
+
+.logo {
+    text-align: center;
+    height: 12vh;
+    display: flex;
+    color: #fffdf0;
+    margin: 10px 0 0 5px; /* Adjusted margin */
+
+  }
+
+  a {
+    position: relative;
+    font-size: 0.8rem;
+    display: block;
+    max-width: 280px; /* Set maximum width */
+    width: auto; /* Allow the width to adjust based on content */
+    padding: 10px 0;
+    margin-top: 0;
+    color: #fffdf0;
+    text-decoration: none;
+  }
+  
+  nav .fas {
+    position: absolute; /* Change position to absolute */
+    top: 50%; /* Position at the center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    left: 30px; /* Adjust the position */
+    font-size: 15px;
+    color: #fffdf0;
+  }
+  
+  .M1 {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #f5c400;
+  }
+  
+  .nav-item {
+    margin-left: 70px;
+    margin-right: 20px; /* Increase margin on the right side */
+    display: inline-block;
+  }
+  
+  .nav-item span {
+    display: inline-block;
+    max-width: calc(100% - 50px); /* Limit the width of the text */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    white-space: nowrap; /* Prevent wrapping */
+  }
+  hr {
+    height: 1px; /* Set the height of the line */
+    background-color: #fffdf0; /* Set the color of the line */
+    border: none; /* Remove default border */
+  }
+  
+  a:hover {
+    background: #f5c400;
+    color: #001840;
+  }
+  
+  .logo:hover,
+  .M1:hover {
+    background: none;
+  }
+  
+  .logout {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+/*Profile Section*/
+
+.profile-picture {
+  width: 180px;  /* or any size you prefer */
+  height: 180px; /* make sure height and width are the same */
+  border-radius: 50%; /* this makes the div circular */
+  overflow: hidden; /* ensures nothing extends outside the circle */
+  border: 3px solid #001840; /* Adjust the hex color code to your preferred color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60px;
+  margin-top: 200px;
+  background: #fff url('img/avatar.jpg') no-repeat center center; /* Add your default background image */
+  background-size: cover; /* Ensures the background image covers the entire circle */
+}
+
+
+.profile-picture img {
+  width: 100%;
+}
+
+.profile-details {
+  flex-grow: 1;
+  color: #000;
+  margin-top: 280px;
+}
+
+.profile-details h2 {
+  margin-top: 0;
+  margin-left: 20px;
+}
+
+.profile-details i{
+  position: absolute;
+  right: 10px;
+  margin: -80px 30px;
+  color: #fffdf0;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
+
+}
+
+.profile-details i:hover{
+  color: #f5c400;
+  transform: scale(1.1); /* Scale up the card on hover */
+
+}
+
+.profile-details p {
+  margin-top: 0;
+  margin-left: 20px;
+}
+
+#user-profile {
+  background-image: url('img/bg.png'); /* Adjust the path as necessary */
+  background-size: cover; /* Cover ensures the background image covers the entire div */
+  background-position: center; /* Centers the background image in the div */
+  width: 100%; /* You may adjust this as per your layout needs */
+  height: 200px; /* Adjust height as necessary to display the background properly */
+  display: flex; /* Using flex layout to align child divs */
+  align-items: center; /* This vertically centers the contents */
+  justify-content: center; /* This horizontally centers the contents */
+  border-radius: 8px;
+}
+
+.user-information {
+  margin-top: 80px;
+  display: flex;  /* Enables flexbox layout */
+  align-items: flex-start; /* Aligns children at the start of the cross axis */
+  justify-content: flex-start; /* Aligns children at the start of the main axis */
+  gap: 20px; /* Adds space between the flex items */
+  padding: 20px;
+  width: 100%;
+  height: auto;
+
+}
+
+.user-information p {
+  padding: 5px;
+
+}
+.user-background-information {
+  width: 30%;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding-top: 20px;  /* Add padding to the top */
+  padding-bottom: 20px;  /* Add padding to the bottom */
+  padding-left: 20px;
+}
+
+.user-LS-KL {
+  display: flex;  /* Enables flexbox layout */
+  width: 100%;    /* Ensure it takes full width of its container */
+  height: 300px;   /* Adjust height as necessary */
+  background-color: #fff;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;  /* Optional padding */
+  justify-content: center;
+}
+
+.user-LS-KL > div {
+  padding: 20px; /* Adds padding around the content */
+  border-right: 2px solid #ccc; /* Adds a vertical line between columns, remove from last child if not needed */
+  width: 50%; /* Set width to 50% if there are exactly two columns */
+}
+
+.user-LS-KL > div:last-child {
+  border-right: none; /* Ensures no border on the right side of the last div */
+}
+
+.user-LS-KL h3 {
+  text-align: center; /* Centers text horizontally */
+  margin-top: 0; /* Ensures the text is at the top of the div */
+  width: 100%; /* Ensures the h3 tag spans the full width of the div */
+}
+
+
+/* Main Section */
+.main{
+  position: relative;
+  padding: 20px;
+  width: 100%;
+}
+.main-top{
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+
+.main-skills {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  .main-skills .card,
+  .main-course .card{
+    background: url('img/AIFoundations.png') center/cover no-repeat; /* Set background image */
+  }
+
+  .main-skills .card1{
+    background: url('img/DT.png') center/cover no-repeat; /* Set background image */
+  }
+  .main-skills .card2{
+    background: url('img/UIUX.png') center/cover no-repeat; /* Set background image */
+
+  }
+  .main-skills .card,
+  .main-skills .card1,
+  .main-skills .card2,
+  .main-course .card {
+    width: 25%;
+    margin: 0px 0px 0px 30px; /* Adjust the margin as needed */
+    height: 300px; /* Adjust the height as needed */
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+  }
+  
+  .main-skills .card:hover,
+  .main-skills .card1:hover,
+  .main-skills .card2:hover,
+  .main-course .card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add shadow effect on hover */
+    transform: scale(1.1); /* Scale up the card on hover */
+  }
+  
+  
+  
+
+/* Courses */
+.main-course{
+  text-transform: capitalize;
+  padding: 20px;
+}
+.course-box{
+  width: 100%;
+  height: relative;
+  padding: 10px 10px 30px 10px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.course-box ul{
+  list-style: none;
+  display: flex;
+}
+.course-box ul li{
+  margin: 10px;
+  color: gray;
+  cursor: pointer;
+}
+.course-box ul .active{
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+.course-box .course{
+  display: flex;
+}
+
+.box{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background: rgb(235, 233, 233);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  background: url('img/box1.png') center/cover no-repeat; /* Set background image */
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box1{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background: rgb(235, 233, 233);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    background: url('img/box2.png') center/cover no-repeat; /* Set background image */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box2{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background: rgb(235, 233, 233);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    background: url('img/box3.png') center/cover no-repeat; /* Set background image */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+
+.box3{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background: rgb(235, 233, 233);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    background: url('img/box4.png') center/cover no-repeat; /* Set background image */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+
+.box4{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background: rgb(235, 233, 233);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    background: url('img/box5.png') center/cover no-repeat; /* Set background image */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+
+  .box5{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background: rgb(235, 233, 233);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    background: url('img/box6.png') center/cover no-repeat; /* Set background image */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+.box p{
+  font-size: 12px;
+  margin-top: 5px;
+
+}
+.box button,
+.box1 button,
+.box2 button,
+.box3 button,
+.box4 button,
+.box5 button{
+  background: #001840;
+  color: #fffdf0;
+  padding: 7px 10px;
+  border-radius: 10px;
+  margin-top: 3rem;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.box button:hover,
+.box1 button:hover,
+.box2 button:hover,
+.box3 button:hover,
+.box4 button:hover,
+.box5 button:hover{
+  background-color: #f5c400;
+  color: #001840;
+  transform: scale(1.1); /* Scale up the card on hover */
+}
+
+.box i{
+  font-size: 7rem;
+  float: right;
+  margin: -20px 20px 20px 0;
+}

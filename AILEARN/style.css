@@ -1,0 +1,1142 @@
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background: #001840;
+    padding: 0.2rem 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 500;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+
+header .logo {
+    font-size: 3rem;
+    margin-top: -1rem;
+    margin-left: 30px;
+}
+
+header .navbar1 {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin-left: 50px;
+    font-size: 4rem;
+}
+
+header .navbar1 .nav-item {
+    margin-right: 1rem; /* Adjust spacing between items */
+}
+
+header .navbar1 a {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #D9EEDB;
+    text-decoration: none; /* Remove underline from links */
+
+}
+
+.navbar1 .dropdown-menu .dropdown-item {
+    color: #001840; /* Change the color as desired */
+}
+
+header .navbar a:hover {
+    color: #F9BF03;
+}
+
+header .icons .button {
+    font-size: .75rem;
+    color: #D9EEDB;
+    background-color: #001840;
+    margin-left: 1rem;
+    padding: 6px 24px;
+    border: 1px solid #D9EEDB;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+header .icons .button:active{
+    transform: scale(0.98);
+}
+header .icons .button:hover {
+    color: #F9BF03;
+}
+
+header .icons {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the search form */
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.search-input {
+    width: 250px; /* Adjust the width as needed */
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid #FFFDF0;
+    background-color: #3A658E;
+    color:#FFFDF0;
+    outline: none;
+}
+.search-input::placeholder {
+    color: #FFFDF0; /* Change the color of the placeholder text */
+}
+
+.fas.fa-search {
+    background-color: transparent; /* Button background color */
+    color: #FFFDF0; /* Button text color */
+    border: none;
+    padding: 18px 18px; /* Adjust padding as needed */
+    border-radius: 50px;
+    margin-left: -45px; /* Adjust the margin to align with the input */
+    cursor: pointer;
+}
+/*login and sign-up buttons */
+.icons {
+    display: flex; /* Align buttons horizontally */
+    align-items: center;
+    margin-bottom: 1px;
+    margin-right: 20px;
+    font-size: 15px;
+}
+.icons a.button {
+    padding: 8px 12px; /* Adjust padding to increase button size */
+    margin-left: 10px; /* Adjust the margin between buttons */
+    text-decoration: none;
+    color: #007bff; /* Button text color */
+    border: 1px solid #007bff; /* Button border color */
+    border-radius: 5px;
+    font-size: 12px; /* Reduce font size for button text */
+}
+
+.icons a.button:hover {
+    background-color: #F5C400; /* Button background color on hover */
+    color: #212120; /* Button text color on hover */
+}
+
+
+
+
+
+/* Home section styling */
+.Home {
+    position: relative;
+    padding: 105px; /* Add 'px' to specify the padding value */
+    overflow: hidden;
+    height: 100vh;
+}
+
+.Video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Use 'vw' (viewport width) instead of '%' for better responsiveness */
+    height: 100vh; /* Use 'vh' (viewport height) instead of '%' for better responsiveness */
+    z-index: -1;
+    overflow: hidden; /* Ensure that the video doesn't overflow its container */
+
+}
+
+.Video video {
+    width: 100%; /* Set width to '100%' to fill the container */
+    height: 100%; /* Set height to '100%' to fill the container */
+    object-fit: cover; /* Ensure the video covers the entire container */
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+/*LOGIN FORM*/
+
+.form_container{
+    position: fixed;
+    max-width: 350px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background: #FFFDF0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+}
+
+
+
+.form_container.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.form_container h2{
+    font-size: 22px;
+    color: #001840;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.form_close{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: #001840;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.input_box {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.input_box input {
+    height: 40px;
+    margin-left: 15px;
+    width: calc(85% - 30px); /* Adjusted width to accommodate icons */
+    padding-left: 0px; /* Added padding to accommodate icons */
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid #aaaaaa;
+    color: #333;
+    transition: all 0.2s ease;
+    font-size: 16px;
+}
+
+.input_box input:focus {
+    border-color: #001840;
+}
+
+.input_box i {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #001840;
+    left: 10px; /* Adjusted left position */
+}
+
+.input_box i.email,
+.input_box i.password,
+.input_box i.user {
+    margin-left: 0; /* Added margin-right to separate icons */
+}
+
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password,
+.input_box input:focus ~ i.user {
+    color: #001840;
+}
+
+.input_box i.pw_hide{
+    margin-left: px;
+    font-size: 18px;
+}
+.note {
+    display: none;
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.input_box:focus-within .note {
+    display: block;
+}
+
+
+.option_field{
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_container a{
+    color: #001840;
+    font-size: 12px;
+}
+
+.form_container a:hover{
+    text-decoration: underline;
+}
+
+.checkbox{
+    display: flex;
+    white-space: nowrap;
+    font-size: 12px;
+    column-gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox label{
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: #001840;
+}
+
+.form_container .button{
+    color: #D9EEDB;
+    font-size: 12px;
+    background-color: #001840;
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+.login_signup{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.signup_form{
+    display: none;
+}
+
+/* USER TYPE LOGIN*/
+.user_type_selection {
+    margin-top: 20px;
+    text-align: center; /* Center the options */
+}
+
+.user_type_selection label {
+    margin-right: 15px;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+}
+
+.user_type_selection input[type="radio"] {
+    display: none; /* Hide the default radio buttons */
+}
+
+/* Style the custom radio buttons */
+.user_type_selection input[type="radio"] + label:before {
+    content: '';
+    display: inline-block;
+    width: 20px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+/* Style the custom radio buttons when checked */
+.user_type_selection input[type="radio"]:checked + label:before {
+    background-color: #001840; /* Adjust as needed */
+}
+
+/* USER TYPE SIGNUP*/
+.user_type_selection {
+    margin-top: 20px;
+    text-align: center; /* Center the options */
+}
+
+.user_type_selection label {
+    margin-right: 15px;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+}
+
+.user_type_selection input[type="radio"] {
+    display: none; /* Hide the default radio buttons */
+}
+
+/* Style the custom radio buttons */
+.user_type_selection input[type="radio"] + label:before {
+    content: '';
+    display: inline-block;
+    width: 20px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+/* Style the custom radio buttons when checked */
+.user_type_selection input[type="radio"]:checked + label:before {
+    background-color: #001840; /* Adjust as needed */
+}
+
+/* Data Privacy Notice styles */
+.data_privacy_notice {
+    display: none; /* Initial state set to not display */
+    padding: 20px;
+    text-align: center;
+    overflow-y: auto; /* Ensure it's scrollable if the content is too long */
+    max-height: 500px;
+
+}
+
+.data_privacy_notice h2 {
+    font-size: 1.5rem;
+    color: #001840; /* Adjust the color to match your theme */
+    margin-bottom: 15px;
+}
+
+.data_privacy_notice_body {
+    max-height: 200px; /* Adjust the value as needed to fit your design */
+    overflow-y: auto; /* This will add a vertical scrollbar to the div */
+    padding: 10px;
+    text-align: justify;
+}
+
+/* Style the scrollbar itself (width, color) */
+.data_privacy_notice_body::-webkit-scrollbar {
+    width: 8px; /* Adjust the width of the scrollbar */
+    background-color: #f5f5f5; /* The scrollbar track color */
+}
+
+/* Style the scrollbar thumb (the part that you drag) */
+.data_privacy_notice_body::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1; /* The scrollbar thumb color */
+    border-radius: 10px; /* Optional: Roundness of the scrollbar thumb */
+    border: 2px solid #f5f5f5; /* Optional: Creates a border inside the scrollbar track */
+}
+
+/* Style the scrollbar thumb on hover */
+.data_privacy_notice_body::-webkit-scrollbar-thumb:hover {
+    background-color: #a8a8a8; /* Darker color on hover */
+}
+
+
+.data_privacy_notice p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.data_privacy_notice div {
+    margin: 10px 0;
+}
+
+.data_privacy_notice input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.data_privacy_notice label {
+    font-size: 1rem;
+    color: #333; /* Adjust the color to match your theme */
+    
+}
+.checkbox-container {
+    text-align: left; /* Aligns text and inline or inline-block elements (like checkboxes) to the left */
+    display: block; /* Optional: ensures the div acts as a block-level element */
+    margin: 10px 0; /* Adds some space above and below the div */
+}
+
+.data_privacy_notice .button {
+    font-size: 1rem;
+    color: #fff;
+    background-color: #F5C400; /* Adjust background color to fit your theme */
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.data_privacy_notice .button:hover {
+    background-color: #e6b800; /* Darker shade for hover effect */
+}
+
+/* Add focus styles for accessibility */
+.data_privacy_notice input[type="checkbox"]:focus + label {
+    outline: 1px dotted #000; /* Accessibility outline for focus state */
+}
+
+
+
+
+
+
+
+/* Text styling */
+
+.Content {
+    display: flex;
+    justify-content: left; /* Align content to the right */
+    max-width: 600px; /* Adjust as needed */
+    margin-top: -4%;
+    margin-left: 55%;
+}
+
+/* Text styling */
+.Text {
+    text-align: left; /* Align text to the right */
+}
+
+.Text h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #F5C400; /* Text color */
+    font-weight: bolder;
+    margin-bottom: 1px;
+}
+
+.Text span {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+.Text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F5C400; /* Button background color */
+    color: #212120; /* Button text color */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #FFD700; /* Button background color on hover */
+}
+
+
+
+
+/* */
+.Dive {
+    display: absolute;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('img/dive.jpg'); /* Set the background image */
+    background-size: cover;
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-size: 100%;
+    padding: 110px 0;
+    text-align: center; /* Center align content */
+    margin-bottom: 0rem;
+}
+
+
+
+
+/* Styles for the Why AILearn section */
+/* OUR VALUES*/
+
+.OVOGLF {
+        display: absolute;
+        justify-content: space-around;
+        align-items: center;
+        background-image: url('img/WABG.jpg'); /* Set the background image */
+        background-size: cover;
+        background-repeat: no-repeat; /* Prevent the background image from repeating */
+        background-size: 100%;
+        padding: 0px 0;
+        text-align: center; /* Center align content */
+    }
+
+.WAS, .OG, .LR {
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: bolder;
+    color: #001840; /* Example text color */
+}
+
+.section-title1 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight:bolder;
+    color: #001840; /* Example text color */
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+.card:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Deepen the shadow */
+    transform: scale(1.05); /* Slightly enlarge the card */
+}
+
+.card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    color: #333;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #666;
+    overflow: hidden;
+    max-height: 100px; /* Adjust the maximum height of the initial display */
+    transition: max-height 0.3s ease;
+}
+
+.card-text.show {
+    max-height: none; /* Show full content when .show class is added */
+}
+
+
+
+
+/* Style for OUR GOALS*/
+.OG {
+    padding: 0px 0; /* Adjust padding as needed */
+}
+
+.section-title2 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight:bolder;
+    color: #001840; /* Example text color */
+}
+.carousel-item img {
+    max-width: 100%; /* Adjust the maximum width of the images */
+    height: 100%; /* Maintain aspect ratio */
+    
+}
+
+.carousel-indicators {
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 40%); /* Adjust the percentage value */
+    color: white; /* Text color */
+    padding: 40px; /* Padding around the caption */
+}
+  
+  /* Style for carousel controls */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%; /* Adjust the width of controls */
+    background-color: none;
+  }
+  
+  /* Style for carousel control icons */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: invert(100%); /* Invert control icons */
+  }
+  
+  /* Hide the previous and next text labels */
+  .carousel-control-prev span,
+  .carousel-control-next span {
+    display: none;
+  }
+
+/* Learner's review*/
+
+.section-title3 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight:bolder;
+    color: #001840; /* Example text color */
+}
+
+.LR .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap; /* Allow cards to wrap when screen size is smaller */
+}
+
+.LR .card1 {
+    flex: 0 0 10%; /* Adjust width of each card */
+    background-color: #001840; /* Change card color */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.LR .card1 h3 {
+    color: #D9EEDB;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.LR .card1 .rating-stars {
+    color: #FFD700; /* Adjust star color */
+    margin-bottom: 10px;
+}
+
+.LR .card1 .rating-stars i {
+    font-size: 20px; /* Adjust star size */
+}
+
+.LR .card1 p {
+    color: #D9EEDB;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/**/
+.LR .card2 {
+    flex: 0 0 20%; /* Adjust width of each card */
+    background-color: #001840; /* Change card color */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.LR .card2 h3 {
+    color: #D9EEDB;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.LR .card2 .rating-stars {
+    color: #FFD700; /* Adjust star color */
+    margin-bottom: 10px;
+}
+
+.LR .card2 .rating-stars i {
+    font-size: 20px; /* Adjust star size */
+}
+
+.LR .card2 p {
+    color: #D9EEDB;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/**/
+.LR .card3 {
+    flex: 0 0 20%;
+    background-color: #001840;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    margin-top: 70%;
+    margin-left: -20%;
+    align-self: left; /* Align to the left */
+}
+
+
+.LR .card3 h3 {
+    color: #D9EEDB;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.LR .card3 .rating-stars {
+    color: #FFD700; /* Adjust star color */
+    margin-bottom: 10px;
+}
+
+.LR .card3 .rating-stars i {
+    font-size: 20px; /* Adjust star size */
+}
+
+.LR .card3 p {
+    color: #D9EEDB;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/**/
+
+.WLSAB {
+    margin-top: 30%;
+    margin-left: -100px;
+}
+.section-title3 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight:bolder;
+    color: #001840; /* Example text color */
+}
+
+.ratings-box {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 30px; /* Use a large value for border-radius to create a cylindrical shape */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    margin-top: 10px; 
+    height: 80px;
+}
+
+.ratings {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Align items vertically */
+    padding: 15px;
+}
+
+.ratings h3 {
+    font-weight: bold;
+    color: #001840;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    flex: 1; /* Allow the text to grow to fill available space */
+}
+
+.ratings .fa-star,
+.ratings .fa-star-half-alt {
+    color: #FFD700;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-top: -5px;
+}
+
+
+
+
+/*Authors*/
+
+/* Existing CSS styles */
+.Authors {
+    padding: 20px 0; /* Adjust padding as needed */
+    background-color: #F5C400;
+}
+
+.section-title1 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight:bolder;
+    color: #001840; /* Example text color */
+}
+
+.card1 {
+    width: 300px; /* Adjust the width as needed */
+    height: 410px; /* Adjust the height as needed */
+    border: 0px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
+    background-color: #FFD700;
+}
+
+
+.card1 h3{
+    color: #001840;
+    margin-bottom: 2px;
+    margin-top: -5%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card1 p.short-description{
+    color: #001840;
+    margin-bottom: 5px;
+    font-size: 13px;
+    
+}
+
+.card1:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Deepen the shadow */
+    transform: scale(1.05); /* Slightly enlarge the card */
+}
+
+.card1-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card1-body {
+    padding: 50px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icons a {
+    margin: 0 5px;
+    color: #001840;
+    font-size: 20px;
+}
+
+/* Add more specific styles for individual icons if needed */
+
+
+
+/*footer*/
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('img/Footpics.jpg'); /* Set the background image */
+    background-size: cover; /* Cover the entire footer area */
+    color: #fff; /* Light text color */
+    padding: 50px 0; /* Add padding */
+    text-align: center; /* Center align content */
+}
+
+
+.column1 {
+    width: 30%; /* Set width for columns */
+    text-align: right; /* Align text to the left */
+    padding: 0 20px; /* Add padding to the sides */
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.column2{
+    width: 30%; /* Set width for columns */
+    text-align: center; /* Align text to the left */
+    padding: 0 20px; /* Add padding to the sides */
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.column3{
+    width: 40%; /* Set width for columns */
+    text-align: left; /* Align text to the left */
+    padding: 0 20px; /* Add padding to the sides */
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.column1 img {
+    width: 200px; /* Adjust image width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add space below image */
+    align-self: left;
+}
+
+.column1 h5 {
+    margin-top: 0; /* Remove default margin */
+}
+
+.column1 h3,
+.column2 h3,
+.column3 h3 {
+    margin-top: 0; /* Remove default margin */
+}
+
+.column1 ul,
+.column2 ul,
+.column3 ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
+}
+
+.column1 ul li,
+.column2 ul li,
+.column3 ul li {
+    margin-bottom: 10px; /* Add space between list items */
+}
+
+.social-icons {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
+}
+
+.social-icons li {
+    display: inline-block; /* Display icons inline */
+    margin-right: 10px; /* Add space between icons */
+}
+
+.social-icons li:last-child {
+    margin-right: 0; /* Remove margin from last icon */
+}
+
+.social-icons a {
+    color: #fff; /* Set icon color */
+    font-size: 24px; /* Adjust icon size */
+}
+
+.social-icons a:hover {
+    color: #FFA500; /* Change color on hover */
+}
+
+
+
+
+
+/* Styles for medium-sized screens (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navbar {
+        flex-wrap: nowrap; /* Prevent items from wrapping */
+    }
+
+    .navbar-brand {
+        margin-right: auto; /* Push logo to the left */
+    }
+
+    .navbar-toggler {
+        order: -1; /* Move toggler to the left */
+    }
+
+    .navbar-collapse {
+        flex-grow: 1; /* Allow the menu items to take up remaining space */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Stack items vertically */
+        padding-left: 0; /* Remove default padding */
+    }
+
+    .icons {
+        display: none; /* Hide icons on medium-sized screens */
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 8px; /* Add spacing between menu items */
+    }
+
+    .navbar-nav .nav-item:last-child {
+        margin-bottom: 0; /* Remove spacing for the last menu item */
+    }
+}
+
+
+
+
+
+
+/* For small devices (less than 576px wide) */
+@media (max-width: 575.98px) {
+    header .logo {
+        font-size: 2rem;
+        margin-left: 10px; /* Adjust margin for smaller screens */
+    }
+
+    header .navbar1 {
+        margin-left: 10px; /* Adjust margin for smaller screens */
+    }
+
+    header .navbar1 a {
+        font-size: 0.8rem; /* Decrease font size for smaller screens */
+    }
+
+    .search-input {
+        width: 150px; /* Adjust width for smaller screens */
+    }
+
+    .fas.fa-search {
+        padding: 12px 12px; /* Adjust padding for smaller screens */
+        margin-left: -35px; /* Adjust margin for smaller screens */
+    }
+
+    .icons a.button {
+        padding: 6px 10px; /* Adjust padding for smaller screens */
+    }
+    .Home {
+        padding: 50px; /* Adjust padding for smaller screens */
+    }
+
+    .Content {
+        margin-left: 0; /* Remove margin for smaller screens */
+        margin-top: 10%; /* Adjust margin-top for smaller screens */
+        justify-content: center; /* Center align content for smaller screens */
+        text-align: center; /* Center align text for smaller screens */
+    }
+}
+
+/* For medium devices (between 576px and 992px wide) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    
+    html {
+        font-size: 48%;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+    header .logo {
+        font-size: 2.5rem;
+        margin-left: 20px; /* Adjust margin for medium screens */
+    }
+
+    header .navbar1 {
+        margin-left: 20px; /* Adjust margin for medium screens */
+    }
+
+    header .navbar1 a {
+        font-size: 1rem; /* Font size for medium screens */
+    }
+    .Home {
+        padding: 80px; /* Adjust padding for medium screens */
+    }
+
+
+    .Content {
+        margin-left: 50%; /* Adjust margin-left for medium screens */
+        margin-top: -4%; /* Adjust margin-top for medium screens */
+    }
+    .Text{
+        font-size: 0.1rem;
+    }
+    .Text h3{
+        font-size: 4rem;
+    }
+}
+
+/* For large devices (between 992px and 1200px wide) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    html {
+        font-size: 83%;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+}
+
+/* For extra-large devices (greater than 1200px wide) */
+@media (min-width: 1200px) {
+    html {
+        font-size: 100%;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+}
+  
+
